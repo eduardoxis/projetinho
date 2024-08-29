@@ -1,12 +1,20 @@
 package model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "tb_pagamento")
 public class Pagamento {
-
-    private Date data;
-    private float valor;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "data_pagamento")
+    private Date data;
+    @Column(name="valor_pagamento")
+    private float valor;
+
 
     @Override
     public String toString() {
